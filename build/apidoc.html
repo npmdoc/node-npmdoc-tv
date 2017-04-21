@@ -1,0 +1,1214 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >tv (v6.1.0)</a>
+</h1>
+<h4>Interactive debug console plugin for hapi</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv">module tv</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser">
+            function <span class="apidocSignatureSpan">tv.</span>messageParser
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.register">
+            function <span class="apidocSignatureSpan">tv.</span>register
+            <span class="apidocSignatureSpan">(server, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager">
+            function <span class="apidocSignatureSpan">tv.</span>webSocketManager
+            <span class="apidocSignatureSpan">(webSocket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv.</span>messageParser.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv.</span>settingsStore</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tv.</span>webSocketManager.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv.messageParser">module tv.messageParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.messageParser">
+            function <span class="apidocSignatureSpan">tv.</span>messageParser
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.create">
+            function <span class="apidocSignatureSpan">tv.messageParser.</span>create
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv.messageParser.prototype">module tv.messageParser.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._addRequest">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_addRequest
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._addServerLog">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_addServerLog
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._findRequest">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_findRequest
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._isEmptyResponseServerLog">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isEmptyResponseServerLog
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._isFirstMessageForNewRequest">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isFirstMessageForNewRequest
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._isForExistingRequest">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isForExistingRequest
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._isResponse">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isResponse
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._refreshResponseTimeout">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_refreshResponseTimeout
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype._updateRequestWithResponse">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_updateRequestWithResponse
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.messageParser.prototype.addMessage">
+            function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>addMessage
+            <span class="apidocSignatureSpan">(rawMessage)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv.settingsStore">module tv.settingsStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.settingsStore.exists">
+            function <span class="apidocSignatureSpan">tv.settingsStore.</span>exists
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.settingsStore.get">
+            function <span class="apidocSignatureSpan">tv.settingsStore.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.settingsStore.set">
+            function <span class="apidocSignatureSpan">tv.settingsStore.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv.webSocketManager">module tv.webSocketManager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.webSocketManager">
+            function <span class="apidocSignatureSpan">tv.</span>webSocketManager
+            <span class="apidocSignatureSpan">(webSocket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.create">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.</span>create
+            <span class="apidocSignatureSpan">(webSocket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tv.webSocketManager.prototype">module tv.webSocketManager.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.prototype.applyFilter">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>applyFilter
+            <span class="apidocSignatureSpan">(clientId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.prototype.clearFilter">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>clearFilter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.prototype.onMessage">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>onMessage
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.prototype.pause">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tv.webSocketManager.prototype.resume">
+            function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv" id="apidoc.module.tv">module tv</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser" id="apidoc.element.tv.messageParser">
+        function <span class="apidocSignatureSpan">tv.</span>messageParser
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">messageParser = function (opts) {
+
+    opts = opts || {};
+
+    this.requests = new Backbone.Collection();
+    this._responseTimeout = opts.responseTimeout || 2000;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.register" id="apidoc.element.tv.register">
+        function <span class="apidocSignatureSpan">tv.</span>register
+        <span class="apidocSignatureSpan">(server, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (server, options, next) {
+
+    const settings = Hoek.applyToDefaults(internals.defaults, options);
+
+    server.views({
+        engines: { html: { module: Handlebars } },
+        path: Path.join(__dirname, &#x27;../templates&#x27;)
+    });
+
+    server.route({
+        method: &#x27;GET&#x27;,
+        path: settings.endpoint + &#x27;/{file*2}&#x27;,
+        config: {
+            auth: settings.authenticateEndpoint,
+            handler: {
+                directory: {
+                    path: Path.join(__dirname, &#x27;../public&#x27;),
+                    listing: false,
+                    index: false
+                }
+            },
+            plugins: {
+                lout: false
+            }
+        }
+    });
+
+    const subscribers = {};                                                   // Map: debug session -&#x3e; [ subscriber ]
+    const tv = new Hapi.Server();
+    tv.connection({ host: settings.host, address: settings.address, port: settings.port });
+
+    tv.start(() =&#x3e; {
+
+        const ws = new Ws.Server({ server: tv.listener });
+        ws.on(&#x27;connection&#x27;, (socket) =&#x3e; {
+
+            const subscriptions = {};
+
+            socket.on(&#x27;message&#x27;, (rawMessage) =&#x3e; {
+
+                const message = rawMessage.split(&#x27;:&#x27;);
+                const action = message[0];
+                const channel = message[1];
+
+                if (action === &#x27;subscribe&#x27;) {
+                    // only add socket to subscribers if no existing subscription found for socket
+                    if (subscriptions[channel] === undefined) {
+                        subscribers[channel] = subscribers[channel] || [];
+                        subscribers[channel].push(socket);
+
+                        subscriptions[channel] = subscribers[channel].length - 1;   // index of socket in subscribers array
+                    }
+                }
+
+                if (action === &#x27;unsubscribe&#x27;) {
+                    subscribers[channel].splice(subscriptions[channel], 1);
+                    delete subscriptions[channel];
+                }
+            });
+        });
+
+        let host = settings.publicHost || settings.host || tv.info.host;
+        if (host === &#x27;0.0.0.0&#x27;) {
+            host = Os.hostname();
+        }
+
+        server.route({
+            method: &#x27;GET&#x27;,
+            path: settings.endpoint,
+            config: {
+                auth: settings.authenticateEndpoint,
+                handler: function (request, reply) {
+
+                    const context = {
+                        endpoint: request.path,
+                        host,
+                        port: tv.info.port
+                    };
+
+                    return reply.view(settings.template, context);
+                },
+                plugins: {
+                    lout: false
+                }
+            }
+        });
+
+        server.ext(&#x27;onRequest&#x27;, (request, reply) =&#x3e; {
+
+            if (request.plugins.tv &#x26;&#x26; request.plugins.tv.debugId) {
+
+                const key = settings.queryKey;
+
+                delete request.query[key];
+                delete request.url.search;
+                delete request.url.query[key];
+
+                request.setUrl(Url.format(request.url));
+            }
+
+            return reply.continue();
+        });
+
+        const onLog = function (request, event, tags) {
+
+            const transmit = function (key) {
+
+                const subs = subscribers[key];
+                if (!subs) {
+                    return;
+                }
+
+                const valid = [];
+                subs.forEach((sub, i) =&#x3e; {
+
+                    try {
+                        if (subs[i].readyState === Ws.OPEN) {
+                            subs[i].send(JSON.stringify(event, null, 4));
+                            valid.push(subs[i]);
+                        }
+                    }
+                    catch (err) { }
+                });
+
+                subscribers[key] = valid;                         // Removes subscriber on any send error
+            };
+
+            const session = request.plugins.tv &#x26;&#x26; request.plugins.tv.debugId;
+            if (session) {
+                transmit(session);
+            } ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+const Hapi = require(&#x27;hapi&#x27;);
+const Tv = require(&#x27;tv&#x27;);
+
+const server = new Hapi.Server();
+
+server.<span class="apidocCodeKeywordSpan">register</span>(Tv, (err) =&#x3e; {
+
+    if (err) {
+        throw err;
+    }
+    server.start();
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager" id="apidoc.element.tv.webSocketManager">
+        function <span class="apidocSignatureSpan">tv.</span>webSocketManager
+        <span class="apidocSignatureSpan">(webSocket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">webSocketManager = function (webSocket) {
+
+    this._webSocket = webSocket;
+
+    this._webSocket.onopen = () =&#x3e; {
+
+        this.isOpen = true;
+        if (this.onSocketOpen) {
+            this.onSocketOpen();
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv.messageParser" id="apidoc.module.tv.messageParser">module tv.messageParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.messageParser" id="apidoc.element.tv.messageParser.messageParser">
+        function <span class="apidocSignatureSpan">tv.</span>messageParser
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">messageParser = function (opts) {
+
+    opts = opts || {};
+
+    this.requests = new Backbone.Collection();
+    this._responseTimeout = opts.responseTimeout || 2000;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.create" id="apidoc.element.tv.messageParser.create">
+        function <span class="apidocSignatureSpan">tv.messageParser.</span>create
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (opts) {
+
+    return new internals.MessageParser(opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv.messageParser.prototype" id="apidoc.module.tv.messageParser.prototype">module tv.messageParser.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._addRequest" id="apidoc.element.tv.messageParser.prototype._addRequest">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_addRequest
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addRequest = function (message) {
+
+    const request = new Request({
+        id: message.request,
+        path: message.data.url,
+        method: message.data.method,
+        timestamp: message.timestamp,
+        serverLogs: new Backbone.Collection()
+    });
+    this.requests.add(request);
+
+    return request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// disregard these messages.
+internals.MessageParser.prototype.addMessage = function (rawMessage) {
+
+const message = JSON.parse(rawMessage.data);
+
+let request;
+if (this._isFirstMessageForNewRequest(message)) {
+    request = this.<span class="apidocCodeKeywordSpan">_addRequest</span>(message);
+    this._addServerLog(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+        this._updateRequestWithResponse(message);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._addServerLog" id="apidoc.element.tv.messageParser.prototype._addServerLog">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_addServerLog
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addServerLog = function (message) {
+
+    const request = this._findRequest(message);
+
+    const serverLog = {
+        tags: message.tags || [],
+        data: message.data,
+        timestamp: message.timestamp,
+        delta: message.timestamp - request.get(&#x27;timestamp&#x27;)
+    };
+
+    if (!this._isEmptyResponseServerLog(message)) {
+        if (message.response) {
+            serverLog.tags.push(&#x27;response&#x27;);
+        }
+
+        if (message.internal || message.response) {
+            serverLog.tags.unshift(&#x27;internal&#x27;);
+        }
+
+        request.get(&#x27;serverLogs&#x27;).add(serverLog);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+internals.MessageParser.prototype.addMessage = function (rawMessage) {
+
+const message = JSON.parse(rawMessage.data);
+
+let request;
+if (this._isFirstMessageForNewRequest(message)) {
+    request = this._addRequest(message);
+    this.<span class="apidocCodeKeywordSpan">_addServerLog</span>(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+        this._updateRequestWithResponse(message);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._findRequest" id="apidoc.element.tv.messageParser.prototype._findRequest">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_findRequest
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_findRequest = function (message) {
+
+    const requestId = message.request;
+
+    // findLast looks in reverse order since the request is most likely to be last
+    return _.findLast(this.requests.models, (request) =&#x3e; {
+
+        return request.id === requestId;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return !!message.response;
+};
+
+
+internals.MessageParser.prototype._isForExistingRequest = function (message) {
+
+return this.<span class="apidocCodeKeywordSpan">_findRequest</span>(message);
+};
+
+
+internals.MessageParser.prototype._isFirstMessageForNewRequest = function (message) {
+
+const found = this._findRequest(message);
+const hasReceivedTag = message.tags &#x26;&#x26; message.tags.indexOf(&#x27;received&#x27;) !== -1;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._isEmptyResponseServerLog" id="apidoc.element.tv.messageParser.prototype._isEmptyResponseServerLog">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isEmptyResponseServerLog
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isEmptyResponseServerLog = function (message) {
+
+    return message.tags &#x26;&#x26;
+        message.tags.length === 1 &#x26;&#x26;
+        message.tags[0] === &#x27;response&#x27; &#x26;&#x26;
+        !message.data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    const serverLog = {
+tags: message.tags || [],
+data: message.data,
+timestamp: message.timestamp,
+delta: message.timestamp - request.get(&#x27;timestamp&#x27;)
+    };
+
+    if (!this.<span class="apidocCodeKeywordSpan">_isEmptyResponseServerLog</span>(message)) {
+if (message.response) {
+    serverLog.tags.push(&#x27;response&#x27;);
+}
+
+if (message.internal || message.response) {
+    serverLog.tags.unshift(&#x27;internal&#x27;);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._isFirstMessageForNewRequest" id="apidoc.element.tv.messageParser.prototype._isFirstMessageForNewRequest">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isFirstMessageForNewRequest
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isFirstMessageForNewRequest = function (message) {
+
+    const found = this._findRequest(message);
+    const hasReceivedTag = message.tags &#x26;&#x26; message.tags.indexOf(&#x27;received&#x27;) !== -1;
+
+    return !found &#x26;&#x26; hasReceivedTag;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// incomplete to represent a full request. In such cases, we&#x27;ll
+// disregard these messages.
+internals.MessageParser.prototype.addMessage = function (rawMessage) {
+
+const message = JSON.parse(rawMessage.data);
+
+let request;
+if (this.<span class="apidocCodeKeywordSpan">_isFirstMessageForNewRequest</span>(message)) {
+    request = this._addRequest(message);
+    this._addServerLog(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._isForExistingRequest" id="apidoc.element.tv.messageParser.prototype._isForExistingRequest">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isForExistingRequest
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isForExistingRequest = function (message) {
+
+    return this._findRequest(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+let request;
+if (this._isFirstMessageForNewRequest(message)) {
+    request = this._addRequest(message);
+    this._addServerLog(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this.<span class="apidocCodeKeywordSpan">_isForExistingRequest</span>(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+        this._updateRequestWithResponse(message);
+    }
+    this._refreshResponseTimeout(message);
+}
+else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._isResponse" id="apidoc.element.tv.messageParser.prototype._isResponse">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_isResponse
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isResponse = function (message) {
+
+    return !!message.response;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (this._isFirstMessageForNewRequest(message)) {
+    request = this._addRequest(message);
+    this._addServerLog(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this.<span class="apidocCodeKeywordSpan">_isResponse</span>(message)) {
+        this._updateRequestWithResponse(message);
+    }
+    this._refreshResponseTimeout(message);
+}
+else {
+    // disregard message
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._refreshResponseTimeout" id="apidoc.element.tv.messageParser.prototype._refreshResponseTimeout">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_refreshResponseTimeout
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_refreshResponseTimeout = function (message) {
+
+    const request = this._findRequest(message);
+
+    clearTimeout(request.timer);
+
+    if (request.get(&#x27;responseTimeout&#x27;)) {
+        request.set(&#x27;responseTimeout&#x27;, false);
+        request.set(&#x27;isComplete&#x27;, false);
+    }
+
+    if (!this._isResponse(message)) {
+        request.timer = setTimeout(() =&#x3e; {
+
+            request.set(&#x27;statusCode&#x27;, &#x27;timeout&#x27;);
+            request.set(&#x27;responseTimeout&#x27;, true);
+            request.set(&#x27;isComplete&#x27;, true);
+
+            this.onResponseTimeout &#x26;&#x26; this.onResponseTimeout();
+        }, this._responseTimeout);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const message = JSON.parse(rawMessage.data);
+
+let request;
+if (this._isFirstMessageForNewRequest(message)) {
+    request = this._addRequest(message);
+    this._addServerLog(message);
+    this.<span class="apidocCodeKeywordSpan">_refreshResponseTimeout</span>(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+        this._updateRequestWithResponse(message);
+    }
+    this._refreshResponseTimeout(message);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype._updateRequestWithResponse" id="apidoc.element.tv.messageParser.prototype._updateRequestWithResponse">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>_updateRequestWithResponse
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateRequestWithResponse = function (message) {
+
+    const request = this._findRequest(message);
+
+    request.set(&#x27;statusCode&#x27;, message.data.statusCode);
+    request.set(&#x27;isComplete&#x27;, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    request = this._addRequest(message);
+    this._addServerLog(message);
+    this._refreshResponseTimeout(message);
+}
+else if (this._isForExistingRequest(message)) {
+    this._addServerLog(message);
+    if (this._isResponse(message)) {
+        this.<span class="apidocCodeKeywordSpan">_updateRequestWithResponse</span>(message);
+    }
+    this._refreshResponseTimeout(message);
+}
+else {
+    // disregard message
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.messageParser.prototype.addMessage" id="apidoc.element.tv.messageParser.prototype.addMessage">
+        function <span class="apidocSignatureSpan">tv.messageParser.prototype.</span>addMessage
+        <span class="apidocSignatureSpan">(rawMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addMessage = function (rawMessage) {
+
+    const message = JSON.parse(rawMessage.data);
+
+    let request;
+    if (this._isFirstMessageForNewRequest(message)) {
+        request = this._addRequest(message);
+        this._addServerLog(message);
+        this._refreshResponseTimeout(message);
+    }
+    else if (this._isForExistingRequest(message)) {
+        this._addServerLog(message);
+        if (this._isResponse(message)) {
+            this._updateRequestWithResponse(message);
+        }
+        this._refreshResponseTimeout(message);
+    }
+    else {
+        // disregard message
+    }
+
+    return request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv.settingsStore" id="apidoc.module.tv.settingsStore">module tv.settingsStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.settingsStore.exists" id="apidoc.element.tv.settingsStore.exists">
+        function <span class="apidocSignatureSpan">tv.settingsStore.</span>exists
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (key) {
+
+    const value = localStorage.getItem(key);
+    return value !== void 0 &#x26;&#x26; value !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.settingsStore.get" id="apidoc.element.tv.settingsStore.get">
+        function <span class="apidocSignatureSpan">tv.settingsStore.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key) {
+
+    return localStorage.getItem(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const request = this._findRequest(message);
+
+const serverLog = {
+    tags: message.tags || [],
+    data: message.data,
+    timestamp: message.timestamp,
+    delta: message.timestamp - request.<span class="apidocCodeKeywordSpan">get</span>(&#x27;timestamp&#x27;)
+};
+
+if (!this._isEmptyResponseServerLog(message)) {
+    if (message.response) {
+        serverLog.tags.push(&#x27;response&#x27;);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.settingsStore.set" id="apidoc.element.tv.settingsStore.set">
+        function <span class="apidocSignatureSpan">tv.settingsStore.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+
+    return localStorage.setItem(key, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+
+internals.MessageParser.prototype._updateRequestWithResponse = function (message) {
+
+const request = this._findRequest(message);
+
+request.<span class="apidocCodeKeywordSpan">set</span>(&#x27;statusCode&#x27;, message.data.statusCode);
+request.set(&#x27;isComplete&#x27;, true);
+};
+
+
+internals.MessageParser.prototype._findRequest = function (message) {
+
+const requestId = message.request;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv.webSocketManager" id="apidoc.module.tv.webSocketManager">module tv.webSocketManager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.webSocketManager" id="apidoc.element.tv.webSocketManager.webSocketManager">
+        function <span class="apidocSignatureSpan">tv.</span>webSocketManager
+        <span class="apidocSignatureSpan">(webSocket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">webSocketManager = function (webSocket) {
+
+    this._webSocket = webSocket;
+
+    this._webSocket.onopen = () =&#x3e; {
+
+        this.isOpen = true;
+        if (this.onSocketOpen) {
+            this.onSocketOpen();
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.create" id="apidoc.element.tv.webSocketManager.create">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.</span>create
+        <span class="apidocSignatureSpan">(webSocket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (webSocket) {
+
+    return new internals.WebSocketManager(webSocket);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tv.webSocketManager.prototype" id="apidoc.module.tv.webSocketManager.prototype">module tv.webSocketManager.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.prototype.applyFilter" id="apidoc.element.tv.webSocketManager.prototype.applyFilter">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>applyFilter
+        <span class="apidocSignatureSpan">(clientId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyFilter = function (clientId) {
+
+    if (this.clientId) {
+        this._webSocket.send(&#x27;unsubscribe:&#x27; + this.clientId);
+    }
+
+    if (this.isOpen) {
+        this.clientId = clientId;
+        this._webSocket.send(this.clientId); // for the pre-unsubscribe version of Tv
+        this._webSocket.send(&#x27;subscribe:&#x27; + this.clientId);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        this._webSocket.send(&#x27;subscribe:&#x27; + this.clientId);
+    }
+};
+
+
+internals.WebSocketManager.prototype.clearFilter = function () {
+
+    this.<span class="apidocCodeKeywordSpan">applyFilter</span>(&#x27;*&#x27;);
+};
+
+
+internals.WebSocketManager.prototype.resume = function () {
+
+    this._webSocket.onmessage = this.onMessageCallback;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.prototype.clearFilter" id="apidoc.element.tv.webSocketManager.prototype.clearFilter">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>clearFilter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearFilter = function () {
+
+    this.applyFilter(&#x27;*&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.prototype.onMessage" id="apidoc.element.tv.webSocketManager.prototype.onMessage">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>onMessage
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onMessage = function (fn) {
+
+    this._webSocket.onmessage = this.onMessageCallback = fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.prototype.pause" id="apidoc.element.tv.webSocketManager.prototype.pause">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {
+
+    this._webSocket.onmessage = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tv.webSocketManager.prototype.resume" id="apidoc.element.tv.webSocketManager.prototype.resume">
+        function <span class="apidocSignatureSpan">tv.webSocketManager.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {
+
+    this._webSocket.onmessage = this.onMessageCallback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
